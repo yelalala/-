@@ -1,0 +1,51 @@
+#包括“../queue/Queue.h”
+
+#包括<iostream>
+#包括<时间.h>
+#包括<堆栈>
+#包括<矢量>
+使用命名空间标准;
+
+//这个计算面积的不会用队列实现。。。
+
+int largestRectangleArea（vector<int>& heights） {
+    整数分辨率 = 0;
+stack<int> s;
+高度。push_back（0);
+    对于 （int i = 0; i <高度。大小（）;i++） {
+        而 （！s.empty（） && heights[s.top（）] > heights[i]） {
+            int h = heights[s.top()];
+流行音乐();
+            int w = s.empty（） ？i ： i - s.top（） - 1;
+res = max（res， h * w）;//比较两者取最大值
+        }
+s.push（i）;
+    }
+    返回 res;
+}
+
+int main() {
+    SRAND（时间（0));
+    int s1[10];//创建数组储存每个柱型的高度，此处定为10个柱型
+    for （int i = 0; i < 10; i++） {
+cout << “每个柱型高度：”;
+        for （int j = 0; j < 10; j++） {
+s1[j] = 兰德（） % 100;//为每个柱型赋随机值
+<< S1[J] <<" ";
+        }
+库特<<恩德尔;
+向量<int> 高度 = { s1[0]，s1[1]，s1[2]，s1[3]，s1[4]，s1[5]，s1[6]，s1[7]，s1[8]，s1[9] };
+        int res = 最大矩形面积（高度）;计算最小面积
+cout << res << endl;//输出最小面积
+    }
+    //也可手动输入高度（具体个数可在代码中定义，默认为10个）
+    int s2[10] = { 0，0，0，0，0，0，0，0，0，0，<>，<> };//初始化
+cout << “请输入高度（10个）：” << endl;
+    for （int k = 0; k < 10; k++） {
+Cin >> S2[k];
+    }
+向量<int> 高度 = { s2[0]，s2[1]，s2[2]，s2[3]，s2[4]，s2[5]，s2[6]，s2[7]，s2[8]，s2[9] };
+    int res = 最大矩形面积（高度）;计算最小面积
+cout << res << endl;//输出最小面积
+    返回 0;
+}
